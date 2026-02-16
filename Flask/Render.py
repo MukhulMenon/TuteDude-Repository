@@ -1,10 +1,16 @@
 from flask import Flask, render_template, request
+from datetime import datetime
 
 app=Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    day_of_week=datetime.now().strftime('%A')
+    current_time = datetime.now().strftime('%H:%M:%S')
+    user=request.values.get('user')
+    if not user:
+        user='Guest'
+    return render_template('index.html',dayOfWeek=day_of_week,currentTime=current_time,user=user)
 @app.route('/user')
 def user():
     name=request.values.get('name')
