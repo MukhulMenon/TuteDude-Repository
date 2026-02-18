@@ -20,5 +20,9 @@ def user():
         'age':age
     }
     return result
+@app.route('/submit',methods=['POST'])
+def submit():
+    form_data=dict(request.form)
+    return form_data
 if __name__=='__main__':
     app.run(debug=True)

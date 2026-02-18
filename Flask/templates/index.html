@@ -8,6 +8,27 @@
     <h1>Hi {{ user }} Welcome to Flask!</h1>
     <p>Today is a {{ dayOfWeek }}</p>
     <p>Current Time: {{ currentTime }}</p>
+    <div class="centered">    
+    <form action="/submit" method="POST">
+        <label> Sign up</label></n>
+        <label> Please fill in the form below to create an account</label></br></br>
+        <label name="fullname"> Full Name</label></nbsp>
+        <input type="text" name="fullname" placeholder="Full Name"></br>
+        <label name="age"> Age</label></nbsp>
+        <input type="text" name="age" placeholder="Age"></br>
+        <label name="country"> Country</label></nbsp>
+        <input type="text" name="country" placeholder="Country"></br>
+        <label name="username"> Username</label></nbsp>
+        <input type="text" name="username" placeholder="Username"></br>
+        <label name="email"> Email</label></nbsp>
+        <input type="email" name="email" placeholder="Email"></br>
+        <label name="password"> Password</label></nbsp>
+        <input type="password" name="password" placeholder="Password"></br>
+        <label confirm-password"> Confirm Password</label></nbsp>
+        <input type="password" name="confirm-password" placeholder="Confirm Password"></br>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
 </body>
 <style>
     body {
@@ -21,6 +42,18 @@
     p {
         color: white;
         font-size: 18px;
+    }
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    form {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
     }
 </style>
 </html>
