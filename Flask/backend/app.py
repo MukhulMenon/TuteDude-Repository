@@ -1,6 +1,5 @@
 import os
-from flask import Flask, render_template, request
-from datetime import datetime
+from flask import Flask,request
 import pymongo
 
 uri = os.getenv('MONGOURI')  # Replace with your MongoDB connection string
@@ -12,26 +11,9 @@ collection = db['learning']
 
 app=Flask(__name__)
 
-@app.route('/')
-def home():
-    day_of_week=datetime.now().strftime('%A')
-    current_time = datetime.now().strftime('%H:%M:%S')
-    user=request.values.get('user')
-    if not user:
-        user='Guest'
-    return render_template('index.html',dayOfWeek=day_of_week,currentTime=current_time,user=user)
-@app.route('/user')
-def user():
-    name=request.values.get('name')
-    age=int(request.values.get('age'))
-    result={
-        'name':name,
-        'age':age
-    }
-    return result
 @app.route('/submit',methods=['POST'])
 def submit():
-    form_data=dict(request.form)
+    form_data=dict(request.json)
     collection.insert_one(form_data)
     return 'Data submitted successfully'
 
@@ -44,4 +26,4 @@ def view():
     }
     return data
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=9000,debug=True)

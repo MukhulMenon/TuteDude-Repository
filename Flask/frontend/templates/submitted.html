@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted</title>
+</head><body>
+    <h1>Form Submitted Successfully!</h1>
+    <p>Here is the data you submitted:</p>
+    <ul>
+        <li><strong>Full Name:</strong> {{ data.fullname }}</li>
+        <li><strong>Age:</strong> {{ data.age }}</li>
+        <li><strong>Country:</strong> {{ data.country }}</li>
+        <li><strong>Username:</strong> {{ data.username }}</li>
+        <li><strong>Email:</strong> {{ data.email }}</li>
+    </ul>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: black;
+    }
+    h1 {
+        color: yellow;
+    }
+    p {
+        color: white;        
+        font-size: 18px;
+    }  
+    ul {
+        color: white;
+        font-size: 18px;
+    }
+</style>
+</html>
