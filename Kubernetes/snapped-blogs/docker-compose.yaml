@@ -15,7 +15,7 @@ services:
     volumes:
       - ./frontend:/app
     environment:
-      - BACKEND_URL=http://backend-host:8000/api
+      - BACKEND_URL=http://backend-host:8000
     ports:
       - "3000:3000"   
     links:
