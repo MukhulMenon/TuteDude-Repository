@@ -86,3 +86,27 @@ def add_travel_blog(new_blog):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     return new_entry
+
+def delete_travel_blog(blog_id):
+    DATA_FILE = "travel-blogs.txt"
+
+    if not os.path.exists(DATA_FILE):
+        raise FileNotFoundError("Data file not found")
+
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        content = f.read().strip()
+        data = json.loads(content) if content else []
+
+    if not isinstance(data, list):
+        raise ValueError("Invalid format: expected a list of blog objects")
+
+    original_len = len(data)
+    data = [b for b in data if str(b.get("id")) != str(blog_id)]
+
+    if len(data) == original_len:
+        raise ValueError(f"Blog with id {blog_id} not found")
+
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    return {"deleted_id": blog_id}

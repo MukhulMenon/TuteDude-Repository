@@ -70,13 +70,5 @@
     "summary": "A beautiful birthday getaway to Lucknow for my jaan, surrounded by royal charm and old-world elegance.",
     "description": "The Lucknow trip was a heartfelt celebration of my jaan's birthday. Royal architecture set the tone for something special. We strolled through historic lanes hand in hand. Delicious sweets added flavor to the joy. Laughter echoed through every shared moment. The city’s nawabi charm made it feel grand yet intimate. I hope it became a birthday filled with love, warmth, and was unforgettable.",
     "image_url": "https://images.unsplash.com/photo-1688287580970-70fe8e0f4bef?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "id": 10,
-    "name": "Kerala Trip",
-    "summary": "A Kerala trip is a refreshing blend of serene backwaters, lush greenery, coastal beauty, and rich cultural experiences that leave you feeling relaxed and reconnected with nature",
-    "description": "The Kerala trip unfolded like a peaceful dream, with palm-lined backwaters and calm houseboat rides setting the tone. Mornings were filled with golden sunrises over quiet waters, while afternoons brought visits to tea gardens and scenic hill views. The beaches offered soft sands and soothing waves, perfect for unwinding. Traditional Kerala cuisine added flavor to every day, from spicy curries to sweet payasam. Kathakali performances and temple visits showcased the state’s vibrant culture. Every moment felt slow, scenic, and soulful. It was a journey that refreshed the mind and warmed the heart.",
-    "date": "2026-04-22",
-    "image_url": "https://plus.unsplash.com/premium_photo-1697730310113-e44fced8e86c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]

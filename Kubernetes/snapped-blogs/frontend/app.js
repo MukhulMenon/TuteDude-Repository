@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 const BASE_URL = process.env.BACKEND_URL || "http://127.0.0.1:8000";
 
@@ -92,6 +94,29 @@ app.post("/create-blog/submit", async (req, res) => {
     return res
       .status(500)
       .send(`Error creating blog: ${error.response?.data?.error || error.message}`);
+  }
+});
+
+app.post("/blog-list/:id/delete", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Call Python API to delete
+    await axios.delete(`${BASE_URL}/blog-list/${id}`);
+
+    // Redirect after delete (go home or list page)
+    return res.redirect("/");
+  } catch (err) {
+    console.error("Delete failed:", {
+      message: err?.message,
+      code: err?.code,
+      status: err?.response?.status,
+      data: err?.response?.data,
+    });
+
+    return res
+      .status(500)
+      .send(`Error deleting blog: ${err?.response?.data?.error || err?.message}`);
   }
 });
 
