@@ -2,3 +2,5 @@
 
 Docker-Project/backend/.env
 Docker-Project/frontend/node_modules/
+
+Kubernetes/snapped-blogs/frontend/node_modules
