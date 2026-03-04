@@ -1,6 +1,7 @@
 /Flask/backend/.env
 
 Docker-Project/backend/.env
+Docker-Project/backend/__pycache__
 Docker-Project/frontend/node_modules/
 
 Kubernetes/snapped-blogs/frontend/node_modules

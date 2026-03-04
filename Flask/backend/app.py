@@ -5,17 +5,30 @@ import pymongo
 uri = os.getenv('MONGOURI')  # Replace with your MongoDB connection string
 
 # Create a new client and connect to the server
-client = pymongo.mongo_client.MongoClient(uri)
+client = pymongo.MongoClient(uri)
 db=client.textdb
 collection = db['learning']
 
 app=Flask(__name__)
 
+@app.route('/')
+def home():
+    try:
+        client.admin.command('ping')
+        print("Pinged your deployment. You successfully connected to MongoDB!")
+        return ("Pinged your deployment. You successfully connected to MongoDB!")
+    except Exception as e:
+        return ({"error": str(e)}), 400
+
 @app.route('/submit',methods=['POST'])
 def submit():
-    form_data=dict(request.json)
-    collection.insert_one(form_data)
-    return 'Data submitted successfully'
+    try:
+        form_data=dict(request.json)
+        collection.insert_one(form_data)
+        return 'Data submitted successfully' ,200
+    except Exception as e:
+        return ({"error": str(e)}), 400
+    
 
 @app.route('/view')
 def view():
